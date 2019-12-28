@@ -5,6 +5,9 @@ use crate::StdError;
 use std::vec;
 
 #[cfg(feature = "std")]
+use std::prelude::v1::*;
+
+#[cfg(feature = "std")]
 pub(crate) use crate::Chain;
 
 #[cfg(not(feature = "std"))]

@@ -1,6 +1,9 @@
 use crate::StdError;
 use core::fmt::{self, Debug, Display};
 
+#[cfg(feature = "std")]
+use std::prelude::v1::*;
+
 #[repr(transparent)]
 pub struct MessageError<M>(pub M);
 
