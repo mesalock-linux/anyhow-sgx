@@ -50,6 +50,9 @@ use core::fmt::{Debug, Display};
 #[cfg(feature = "std")]
 use crate::StdError;
 
+#[cfg(feature = "std")]
+use std::prelude::v1::*;
+
 #[cfg(backtrace)]
 use std::backtrace::Backtrace;
 

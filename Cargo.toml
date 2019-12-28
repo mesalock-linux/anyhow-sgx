@@ -13,11 +13,15 @@ readme = "README.md"
 travis-ci = { repository = "dtolnay/anyhow" }
 
 [features]
-default = ["std"]
-std = []
+default = ["std", "mesalock_sgx"]
+std = ["mesalock_sgx"]
+mesalock_sgx = ["std", "sgx_tstd", "sgx_tstd/backtrace"]
+
+[dependencies]
+sgx_tstd = { rev = "v1.1.0", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
 
 [dev-dependencies]
-futures = "0.3"
-rustversion = "1.0"
-thiserror = "1.0"
-trybuild = { version = "1.0.19", features = ["diff"] }
+#futures = "0.3"
+#rustversion = "1.0"
+#thiserror = "1.0"
+#trybuild = { version = "1.0.19", features = ["diff"] }
